@@ -11,12 +11,41 @@ const Footer = () => {
 		{ name: "Contact", path: "/contact" },
 	];
 
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2,
+				delayChildren: 0.1,
+			},
+		},
+	};
+
+	const itemVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.5,
+				ease: "easeOut",
+			},
+		},
+	};
+
 	return (
 		<footer className="bg-black text-white">
-			<div className="container mx-auto px-4 md:px-8 py-16">
+			<motion.div
+				className="container mx-auto px-4 md:px-8 py-16"
+				variants={containerVariants}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true }}
+			>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					{/* Logo and About Section */}
-					<div className="space-y-6">
+					<motion.div variants={itemVariants} className="space-y-6">
 						<img
 							src={Logo}
 							alt="BMK Developments"
@@ -27,16 +56,20 @@ const Footer = () => {
 							delivering quality builds and renovations across
 							Sydney.
 						</p>
-					</div>
+					</motion.div>
 
 					{/* Quick Links */}
-					<div>
+					<motion.div variants={itemVariants}>
 						<h3 className="text-xl font-semibold mb-6">
 							Quick Links
 						</h3>
 						<ul className="space-y-3">
-							{quickLinks.map((link) => (
-								<li key={link.name}>
+							{quickLinks.map((link, index) => (
+								<motion.li
+									key={link.name}
+									variants={itemVariants}
+									custom={index}
+								>
 									<Link
 										to={link.path}
 										className="text-gray-300 hover:text-[#0d83ed] transition-colors duration-300 flex items-center gap-2 group"
@@ -44,46 +77,64 @@ const Footer = () => {
 										<ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" />
 										{link.name}
 									</Link>
-								</li>
+								</motion.li>
 							))}
 						</ul>
-					</div>
+					</motion.div>
 
 					{/* Contact Info */}
-					<div>
+					<motion.div variants={itemVariants}>
 						<h3 className="text-xl font-semibold mb-6">
 							Contact Us
 						</h3>
 						<ul className="space-y-4">
-							<li className="flex items-start gap-3">
-								<MapPin className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
-								<span className="text-gray-300">
-									Sydney, NSW
-								</span>
-							</li>
-							<li className="flex items-start gap-3">
-								<Phone className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
-								<a
-									href="tel:0460006007"
-									className="text-gray-300 hover:text-[#0d83ed] transition-colors duration-300"
+							{[
+								{
+									icon: (
+										<MapPin className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
+									),
+									text: "Sydney, NSW",
+								},
+								{
+									icon: (
+										<Phone className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
+									),
+									text: "0460 006 007",
+									href: "tel:0460006007",
+								},
+								{
+									icon: (
+										<Mail className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
+									),
+									text: "info@bmkdevelopments.com",
+									href: "mailto:info@bmkdevelopments.com",
+								},
+							].map((item, index) => (
+								<motion.li
+									key={index}
+									variants={itemVariants}
+									className="flex items-start gap-3"
 								>
-									0460 006 007
-								</a>
-							</li>
-							<li className="flex items-start gap-3">
-								<Mail className="w-5 h-5 text-[#0d83ed] flex-shrink-0 mt-1" />
-								<a
-									href="mailto:info@bmkdevelopments.com"
-									className="text-gray-300 hover:text-[#0d83ed] transition-colors duration-300"
-								>
-									info@bmkdevelopments.com
-								</a>
-							</li>
+									{item.icon}
+									{item.href ? (
+										<a
+											href={item.href}
+											className="text-gray-300 hover:text-[#0d83ed] transition-colors duration-300"
+										>
+											{item.text}
+										</a>
+									) : (
+										<span className="text-gray-300">
+											{item.text}
+										</span>
+									)}
+								</motion.li>
+							))}
 						</ul>
-					</div>
+					</motion.div>
 
 					{/* Free Quote Section */}
-					<div>
+					<motion.div variants={itemVariants}>
 						<h3 className="text-xl font-semibold mb-6">
 							Free Quote
 						</h3>
@@ -92,18 +143,29 @@ const Footer = () => {
 							including Kitchen and Bathrooms, home extensions,
 							alterations and much more.
 						</p>
-						<Link
-							to="/contact"
-							className="inline-block bg-[#0d83ed] hover:bg-[#0d83ed]/90 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+						<motion.div
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
 						>
-							Get A Quote
-						</Link>
-					</div>
+							<Link
+								to="/contact"
+								className="inline-block bg-[#0d83ed] hover:bg-[#0d83ed]/90 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+							>
+								Get A Quote
+							</Link>
+						</motion.div>
+					</motion.div>
 				</div>
-			</div>
+			</motion.div>
 
 			{/* Bottom Bar */}
-			<div className="border-t border-gray-800">
+			<motion.div
+				className="border-t border-gray-800"
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true }}
+				transition={{ delay: 1 }}
+			>
 				<div className="container mx-auto px-4 md:px-8 py-6">
 					<div className="flex flex-col md:flex-row justify-between items-center gap-4">
 						<p className="text-gray-400 text-sm text-center md:text-left">
@@ -123,7 +185,7 @@ const Footer = () => {
 						</p>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</footer>
 	);
 };
