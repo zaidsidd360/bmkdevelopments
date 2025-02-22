@@ -28,7 +28,7 @@ const Footer = () => {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 0.5,
+				duration: 0.2,
 				ease: "easeOut",
 			},
 		},
@@ -164,7 +164,7 @@ const Footer = () => {
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				viewport={{ once: true }}
-				transition={{ delay: 1 }}
+				transition={{ delay: 0.2 }}
 			>
 				<div className="container mx-auto px-4 md:px-8 py-6">
 					<div className="flex flex-col md:flex-row justify-between items-center gap-4">

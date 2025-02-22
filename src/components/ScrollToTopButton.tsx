@@ -30,7 +30,7 @@ const ScrollToTopButton: React.FC = () => {
 			{isVisible && (
 				<button
 					onClick={scrollToTop}
-					className="fixed bottom-16 md:bottom-6 right-6 z-50 bg-[#6da340] text-white rounded-full p-3 shadow-lg border border-white/20"
+					className="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 bg-[#0d83ed]/80 backdrop-blur-2xl text-white rounded-full p-3 shadow-lg border border-white/20"
 					aria-label="Scroll to top"
 				>
 					<ChevronUp size={24} />

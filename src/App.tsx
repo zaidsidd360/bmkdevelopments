@@ -4,6 +4,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ServiceRoute from "./pages/ServiceRoute";
 
 function App() {
 	return (
@@ -15,6 +16,10 @@ function App() {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route
+							path="/services/:service"
+							element={<ServiceRoute />}
+						/>
 					</Routes>
 					<Footer />
 				</BrowserRouter>
