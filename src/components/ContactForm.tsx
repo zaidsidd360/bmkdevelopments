@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import {
-	User,
 	Mail,
 	Phone,
-	MessageSquare,
 	Send,
 	Building,
 	MapPin,
