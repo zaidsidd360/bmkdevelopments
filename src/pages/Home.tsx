@@ -7,7 +7,11 @@ import {
 	Clock,
 	Mail,
 	Phone,
+  QuoteIcon,
 } from "lucide-react";
+import heroImage from "../assets/heroImage.webp"
+import homewwr from "../assets/homewwr.jpg"
+import homewwr2 from "../assets/homewwr2.webp"
 
 const Hero = () => {
 	// Animation variants for the letter split effect
@@ -44,7 +48,7 @@ const Hero = () => {
 		<div className="relative w-full h-[calc(100vh-5rem)] md:h-[calc(100vh-6rem)]">
 			{/* Image container */}
 			<img
-				src="https://prominenthomesaustralia.com/wp-content/uploads/2021/05/gduazu6v1gy11.jpg"
+				src={heroImage}
 				alt="BMK Developments Hero"
 				className="w-full h-full object-cover"
 			/>
@@ -120,7 +124,7 @@ const AboutSection = () => {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						src="https://prominenthomesaustralia.com/wp-content/uploads/2021/06/architectural-visualisation.jpg"
+						src={homewwr}
 						alt="BMK Developments Project"
 						className="w-full h-[300px] md:h-[400px] object-cover rounded-2xl shadow-lg"
 					/>
@@ -237,7 +241,7 @@ const AboutSection = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, delay: 0.2 }}
-						src="https://prominenthomesaustralia.com/wp-content/uploads/2021/06/bd87dfff-1764-428e-b6e9-0627c7c18040.jpg"
+						src={homewwr2}
 						alt="BMK Developments Project"
 						className="w-full object-cover rounded-2xl shadow-lg"
 					/>
@@ -249,8 +253,8 @@ const AboutSection = () => {
 
 const Quote = () => {
 	return (
-		<section className="bg-black py-12">
-			<div className="container mx-auto px-4 md:px-8">
+		<section className="bg-white py-16 ">
+			<div className="container mx-auto px-4 md:px-8 ">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -259,10 +263,19 @@ const Quote = () => {
 						duration: 1,
 						ease: "easeOut",
 					}}
-					className="w-full mx-auto text-center"
+					className="relative w-full mx-auto text-center"
 				>
+					{/* Quote Icon */}
+					<div className="absolute left-4 top-4 -translate-y-7 text-gray-400 opacity-20 scale-150 sm:scale-200 md:scale-250 rotate-180">
+						<QuoteIcon />
+					</div>
+
+					{/* Quote Text */}
 					<motion.p
-						className="text-xl sm:text-2xl md:text-3xl font-bold text-white italic leading-relaxed"
+						className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 italic leading-relaxed"
+						style={{
+							textShadow: "3px 3px  rgba(0, 0, 0, 0.2)", // This is the text shadow!
+						}}
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
@@ -272,11 +285,7 @@ const Quote = () => {
 							ease: "easeOut",
 						}}
 					>
-						"Excellence in construction isn't measured by bricks and
-						mortar alone; it's the seamless fusion of innovative
-						design, superior craftsmanship, and unwavering attention
-						to detail. Every space we create tells a story of
-						quality that stands the test of time."
+						Quality in construction is a blend of innovation, skill, and a passion for perfection.
 					</motion.p>
 				</motion.div>
 			</div>

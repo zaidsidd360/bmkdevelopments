@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import ServiceRoute from "./pages/ServiceRoute";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import FloatingContact from "./components/FloatingContact";
+import FloatingWhatsapp from "./components/FloatingWhatsapp";
 
 function App() {
 	return (
@@ -25,6 +27,8 @@ function App() {
 						<Route path="/about" element={<About />} />
 						<Route path="/contact" element={<Contact />} />
 					</Routes>
+          <FloatingContact />
+          <FloatingWhatsapp />
 					<Footer />
 				</BrowserRouter>
 			</div>

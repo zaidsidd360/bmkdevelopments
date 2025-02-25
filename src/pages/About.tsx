@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Building, Check, Mail, Phone } from "lucide-react";
+import heroImage from "../assets/heroImage.webp"
 
 const About = () => {
 	return (
@@ -131,7 +132,7 @@ const About = () => {
 							className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl"
 						>
 							<img
-								src="https://prominenthomesaustralia.com/wp-content/uploads/2021/05/gduazu6v1gy11.jpg"
+								src={heroImage}
 								alt="Modern bathroom design"
 								className="w-full h-full object-cover"
 							/>
