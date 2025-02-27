@@ -4,7 +4,6 @@ import WhatsApp from "../assets/whatsapp-color.svg";
 const FloatingWhatsapp: React.FC = () => {
 	const phoneNumber = "+61404442562";
   
-
 	// Construct the WhatsApp chat URL
 	const whatsappLink = `https://wa.me/${phoneNumber}`;
 

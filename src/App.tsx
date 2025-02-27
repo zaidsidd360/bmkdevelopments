@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FloatingContact from "./components/FloatingContact";
 import FloatingWhatsapp from "./components/FloatingWhatsapp";
+import AboutN from "./pages/AboutN";
 
 function App() {
 	return (
@@ -24,11 +25,11 @@ function App() {
 							path="/services/:service"
 							element={<ServiceRoute />}
 						/>
-						<Route path="/about" element={<About />} />
+						<Route path="/about" element={<AboutN />} />
 						<Route path="/contact" element={<Contact />} />
 					</Routes>
-          <FloatingContact />
-          <FloatingWhatsapp />
+					<FloatingContact />
+					<FloatingWhatsapp />
 					<Footer />
 				</BrowserRouter>
 			</div>
