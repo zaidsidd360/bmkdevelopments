@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Building, Check, Mail, Phone } from "lucide-react";
-import heroImage from "../assets/heroImage.webp";
 import newbuild3 from "../assets/newbuild/newbuild3.webp";
 import grannyflat7 from "../assets/grannyflat/grannyflat7.webp";
 import { Link } from "react-router-dom";

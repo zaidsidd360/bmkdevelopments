@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ServiceRoute from "./pages/ServiceRoute";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FloatingContact from "./components/FloatingContact";
 import FloatingWhatsapp from "./components/FloatingWhatsapp";
