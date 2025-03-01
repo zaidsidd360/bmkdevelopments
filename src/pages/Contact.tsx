@@ -8,22 +8,24 @@ const Contact = () => {
 			<section className="relative bg-[#0d83ed]/5 py-12 md:py-20">
 				<div className="container mx-auto px-4 md:px-8">
 					<motion.div
-						initial={{ opacity: 0, y: 20 }}
+						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className="text-center space-y-4"
+						className="text-center space-y-6"
 					>
-						<h1 className="text-4xl md:text-5xl font-bold">
-							CONTACT US
+						<h1 className="text-3xl md:text-4xl font-extrabold">
+							Contact Us
 						</h1>
-						<h2 className="text-2xl md:text-3xl text-gray-700">
-							BMK Developments
-						</h2>
-						<div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-gray-600">
+						<p className="text-lg md:text-xl text-gray-600">
+							We'd love to hear from you! Whether you have a
+							question, feedback, or just want to say hello, reach
+							out to us.
+						</p>
+						{/* <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-gray-500">
 							<span>ABN: 24 679 267 111</span>
-							<span className="hidden md:inline">•</span>
+							<span className="hidden md:inline">|</span>
 							<span>Lic Number: 469014C</span>
-						</div>
+						</div> */}
 					</motion.div>
 				</div>
 			</section>

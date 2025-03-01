@@ -9,6 +9,7 @@ import {
 	Award,
 } from "lucide-react";
 import React, { useState } from "react";
+import newbuild4 from "../assets/newbuild/newbuild4.webp";
 
 const ContactForm = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -22,43 +23,42 @@ const ContactForm = () => {
 	};
 
 	return (
-		<section className="py-16 md:py-24 bg-white">
+		<section className="py-12 md:py-20 bg-white">
 			<div className="container mx-auto px-4 md:px-8">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
 					{/* Left Column - Contact Info */}
 					<motion.div
+						className="space-y-4 md:space-y-8"
 						initial={{ opacity: 0, x: -20 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8 }}
-						className="space-y-8"
 					>
-						<div className="space-y-6">
-							<h2 className="text-3xl font-bold text-gray-800">
-								Reach out to us
-							</h2>
-							<p className="text-gray-600 text-lg">
-								Please feel free to call or email us should you
-								require any information about our services, or
-								if you wish for one of our representatives to
-								come out and quote your project.
-							</p>
-							<p className="text-gray-600 text-lg font-medium">
-								We can provide a free no obligation quote within
-								24 hours.
-							</p>
-						</div>
-
-						<div className="space-y-4">
-							<div className="flex items-center gap-3">
-								<Building className="w-5 h-5 text-[#0d83ed]" />
+						<img
+							className="w-[100%] h-56 object-cover object-top md:object-center rounded-xl md:rounded-2xl shadow-xl"
+							src={newbuild4}
+							alt="Minarets Illustration"
+						/>
+						<p className="text-gray-600 text-lg">
+							Feel free to reach out to us for any details about
+							our services, or if you would like one of our team
+							members to visit and provide a quote for your
+							project.
+						</p>
+						<p className="text-gray-600 text-lg font-medium">
+							We offer a complimentary, no-obligation quote within
+							24 hours.
+						</p>
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+							<div className="flex items-center gap-2">
+								<Building className="w-4 h-4 text-[#0d83ed]" />
 								<div>
 									<span className="font-semibold">ABN:</span>{" "}
 									24 679 267 111
 								</div>
 							</div>
-							<div className="flex items-center gap-3">
-								<Award className="w-5 h-5 text-[#0d83ed]" />
+							<div className="flex items-center gap-2">
+								<Award className="w-4 h-4 text-[#0d83ed]" />
 								<div>
 									<span className="font-semibold">
 										Lic Number:
@@ -66,8 +66,8 @@ const ContactForm = () => {
 									469014C
 								</div>
 							</div>
-							<div className="flex items-center gap-3">
-								<MapPin className="w-5 h-5 text-[#0d83ed]" />
+							<div className="flex items-center gap-2">
+								<MapPin className="w-4 h-4 text-[#0d83ed]" />
 								<div>
 									<span className="font-semibold">
 										Address:
@@ -75,8 +75,8 @@ const ContactForm = () => {
 									Sydney, NSW
 								</div>
 							</div>
-							<div className="flex items-center gap-3">
-								<Mail className="w-5 h-5 text-[#0d83ed]" />
+							<div className="flex items-center gap-2">
+								<Mail className="w-4 h-4 text-[#0d83ed]" />
 								<a
 									href="mailto:info@bmkdevelopments.com"
 									className="hover:text-[#0d83ed] transition-colors"
@@ -84,8 +84,8 @@ const ContactForm = () => {
 									info@bmkdevelopments.com
 								</a>
 							</div>
-							<div className="flex items-center gap-3">
-								<Phone className="w-5 h-5 text-[#0d83ed]" />
+							<div className="flex items-center gap-2">
+								<Phone className="w-4 h-4 text-[#0d83ed]" />
 								<a
 									href="tel:0460006007"
 									className="hover:text-[#0d83ed] transition-colors"
@@ -93,31 +93,26 @@ const ContactForm = () => {
 									0460 006 007
 								</a>
 							</div>
-						</div>
-
-						<div className="pt-6">
-							<p className="font-medium mb-3">
-								Follow us on Social Media
-							</p>
-							<a
-								href="https://instagram.com/bmkdevelopments"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 text-gray-600 hover:text-[#0d83ed] transition-colors"
-							>
-								<Instagram className="w-5 h-5" />
-								<span>@bmkdevelopments</span>
-							</a>
+							<div className="flex items-center gap-2">
+								<Instagram className="w-4 h-4 text-[#0d83ed]" />
+								<a
+									href="https://instagram.com/bmkdevelopments"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-2 text-gray-600 hover:text-[#0d83ed] transition-colors"
+								>
+									@bmkdevelopments
+								</a>
+							</div>
 						</div>
 					</motion.div>
-
 					{/* Right Column - Form */}
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8 }}
-						className="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg"
+						className="bg-gray-50 p-4 md:p-8 rounded-2xl shadow-lg"
 					>
 						<h2 className="text-2xl font-bold mb-6">
 							FREE ONLINE QUOTE
@@ -129,7 +124,7 @@ const ContactForm = () => {
 										type="text"
 										required
 										placeholder="First Name"
-										className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors"
+										className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors"
 									/>
 								</div>
 								<div className="relative">
@@ -137,7 +132,7 @@ const ContactForm = () => {
 										type="text"
 										required
 										placeholder="Last Name"
-										className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors"
+										className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors"
 									/>
 								</div>
 							</div>
@@ -148,7 +143,7 @@ const ContactForm = () => {
 										type="tel"
 										required
 										placeholder="Phone"
-										className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors"
+										className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors"
 									/>
 								</div>
 								<div className="relative">
@@ -156,7 +151,7 @@ const ContactForm = () => {
 										type="email"
 										required
 										placeholder="Email"
-										className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors"
+										className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors"
 									/>
 								</div>
 							</div>
@@ -165,7 +160,7 @@ const ContactForm = () => {
 								<input
 									type="text"
 									placeholder="Company"
-									className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors"
+									className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors"
 								/>
 							</div>
 
@@ -174,7 +169,7 @@ const ContactForm = () => {
 									required
 									rows={4}
 									placeholder="Your Message"
-									className="w-full bg-white border border-gray-200 rounded-lg px-5 py-4 outline-none focus:border-[#0d83ed] transition-colors resize-none"
+									className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 md:px-5 md:py-4 outline-none focus:border-[#0d83ed] transition-colors resize-none"
 								/>
 							</div>
 
