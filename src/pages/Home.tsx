@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {
+	ArrowRight,
 	Award,
 	Building,
 	Check,
@@ -7,11 +8,12 @@ import {
 	Clock,
 	Mail,
 	Phone,
-  QuoteIcon,
+	QuoteIcon,
 } from "lucide-react";
-import heroImage from "../assets/heroImage.webp"
-import homewwr from "../assets/homewwr.jpg"
-import homewwr2 from "../assets/homewwr2.webp"
+import heroImage from "../assets/heroImage.webp";
+import homewwr from "../assets/homewwr.jpg";
+import homewwr2 from "../assets/homewwr2.webp";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 	// Animation variants for the letter split effect
@@ -55,10 +57,10 @@ const Hero = () => {
 
 			{/* Overlay text container */}
 			<div className="absolute inset-0 flex items-center bg-black/60">
-				<div className="container mx-auto px-4 md:px-8">
-					<div className="flex flex-col items-start md:items-center max-w-3xl mx-auto">
-						{/* Mobile: Left-aligned, Desktop: Center-aligned */}
-						<div className="flex flex-col items-start md:items-center space-y-1 md:space-y-4">
+				<div className="container px-4 md:px-8">
+					<div className="flex flex-col items-start md:items-start max-w-3xl mx-auto">
+						{/* Mobile: Left-aligned, Desktop: Left-aligned */}
+						<div className="flex flex-col items-start space-y-1 md:space-y-4">
 							{letters.map((word, wordIndex) => (
 								<div key={wordIndex} className="flex">
 									{word.map((letter, letterIndex) => (
@@ -78,10 +80,12 @@ const Hero = () => {
 								: "text-white"
 						}
                       `}
-											initial="hidden"
-											animate="visible"
-											variants={letterVariants}
+											initial={{ opacity: 0, x: -50 }}
+											animate={{ opacity: 1, x: 0 }}
 											transition={{
+												type: "spring",
+												stiffness: 100,
+												damping: 10,
 												delay:
 													(wordIndex * word.length +
 														letterIndex) *
@@ -95,17 +99,154 @@ const Hero = () => {
 							))}
 						</div>
 
-						{/* Tagline */}
+						{/* Tagline with new animation */}
 						<motion.p
-							className="text-white text-lg md:text-xl mt-6 md:mt-8 md:text-center"
-							initial="hidden"
-							animate="visible"
-							variants={paragraphVariants}
+							className="text-white text-lg md:text-xl mt-6 md:mt-8 md:text-left"
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								type: "spring",
+								stiffness: 100,
+								damping: 10,
+								delay: 0.2,
+							}}
 						>
 							Transforming spaces with excellence - from luxury
 							new builds and stunning renovations to seamless home
 							extensions. Your vision, our expertise.
 						</motion.p>
+
+						{/* Call to Action Section */}
+						{/* <div className="mt-8 space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-4"> */}
+						{/* <div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.4,
+									}}
+									className="text-white text-lg"
+								>
+									Personalised Consultation
+								</motion.div>
+							</div>
+							<div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.5,
+									}}
+									className="text-white text-lg"
+								>
+									Creative Design Solutions
+								</motion.div>
+							</div>
+							<div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.6,
+									}}
+									className="text-white text-lg"
+								>
+									Client-Focused Approach
+								</motion.div>
+							</div>
+							<div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.7,
+									}}
+									className="text-white text-lg"
+								>
+									Efficient Approvals Handling
+								</motion.div>
+							</div>
+							<div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.8,
+									}}
+									className="text-white text-lg"
+								>
+									Quality and Transparency
+								</motion.div>
+							</div>
+							<div className="flex items-center">
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{
+										type: "spring",
+										stiffness: 100,
+										damping: 10,
+										delay: 0.9,
+									}}
+									className="text-white text-lg"
+								>
+									Peace of Mind
+								</motion.div>
+							</div> */}
+						{/* </div> */}
+
+						{/* Buttons Section */}
+						<div className="mt-6 flex flex-col md:flex-row md:space-x-4 space-y-3 md:space-y-0">
+							<motion.button
+								className="bg-[#0d83ed] text-white px-4 py-2 text-sm md:text-base rounded-lg hover:bg-[#0d83ed]/80 transition-all duration-300 transform hover:scale-105"
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									type: "spring",
+									stiffness: 100,
+									damping: 10,
+									delay: 1,
+								}}
+							>
+								<Link
+									to={"/contact"}
+									className="flex items-center gap-2 group"
+								>
+									Get an Estimate{" "}
+									<ArrowRight className="group-hover:translate-x-1.5 transition" />
+								</Link>
+							</motion.button>
+							<motion.button
+								className="bg-transparent border-2 border-white text-white px-4 py-2 text-sm md:text-base rounded-lg hover:bg-[#0d83ed] hover:border-[#0d83ed] transition-all duration-300 transform hover:scale-105"
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									type: "spring",
+									stiffness: 100,
+									damping: 10,
+									delay: 1.1,
+								}}
+							>
+								<Link to={"/services/new-build"}>
+									View Our Services
+								</Link>
+							</motion.button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -285,7 +426,8 @@ const Quote = () => {
 							ease: "easeOut",
 						}}
 					>
-						Quality in construction is a blend of innovation, skill, and a passion for perfection.
+						Quality in construction is a blend of innovation, skill,
+						and a passion for perfection.
 					</motion.p>
 				</motion.div>
 			</div>
