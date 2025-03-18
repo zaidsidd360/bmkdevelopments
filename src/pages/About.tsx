@@ -42,7 +42,7 @@ const About = () => {
 							className="space-y-6"
 						>
 							<h2 className="text-3xl font-bold text-gray-800">
-								Why Choose Us?
+								PARTNER WITH EXCELLENCE
 							</h2>
 
 							<div className="space-y-4">

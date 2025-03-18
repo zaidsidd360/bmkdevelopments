@@ -14,32 +14,33 @@ import heroImage from "../assets/heroImage.webp";
 import homewwr from "../assets/homewwr.jpg";
 import homewwr2 from "../assets/homewwr2.webp";
 import { Link } from "react-router-dom";
+import { div } from "framer-motion/client";
 
 const Hero = () => {
 	// Animation variants for the letter split effect
-	const letterVariants = {
-		hidden: {
-			opacity: 0,
-			y: 20,
-		},
-		visible: {
-			opacity: 0.8,
-			y: 0,
-			transition: {
-				duration: 0.8,
-				ease: "easeOut",
-			},
-		},
-	};
+	// const letterVariants = {
+	// 	hidden: {
+	// 		opacity: 0,
+	// 		y: 20,
+	// 	},
+	// 	visible: {
+	// 		opacity: 0.8,
+	// 		y: 0,
+	// 		transition: {
+	// 			duration: 0.8,
+	// 			ease: "easeOut",
+	// 		},
+	// 	},
+	// };
 
-	const paragraphVariants = {
-		hidden: { opacity: 0, y: 20 },
-		visible: {
-			opacity: 0.8,
-			y: 0,
-			transition: { duration: 0.8, delay: 0.2 },
-		},
-	};
+	// const paragraphVariants = {
+	// 	hidden: { opacity: 0, y: 20 },
+	// 	visible: {
+	// 		opacity: 0.8,
+	// 		y: 0,
+	// 		transition: { duration: 0.8, delay: 0.2 },
+	// 	},
+	// };
 
 	// Split text into individual letters while preserving words
 	const text = "BMK DEVELOPMENTS";
@@ -281,28 +282,29 @@ const AboutSection = () => {
 						className="space-y-4"
 					>
 						<h2 className="text-3xl md:text-4xl font-bold mb-6">
-							WHO WE ARE
+							BUILDING YOUR VISION
 						</h2>
 						<p className="text-gray-700">
-							BMK Developments is an established construction
-							company operating out of Sydney, specializing in
-							luxury new builds, renovations, and extensions.
+							Based in Sydney, BMK Developments has earned its reputation
+							as a premier construction firm, delivering exceptional
+							high-end residential projects, comprehensive home
+							transformations, and sophisticated property additions.
 						</p>
 						<p className="text-gray-700">
-							With over 10 years' experience in the building
-							industry delivering bespoke results, we pride
-							ourselves with ensuring our client is happy at all
-							times. Our team consists of a professional group of
-							qualified tradesmen ranging across all building
-							trades focusing on always delivering perfection and
-							100% customer satisfaction.
+							For more than a decade, our unwavering commitment to
+							excellence has shaped Sydney's residential landscape.
+							Our distinguished team brings together the finest
+							craftsmen and specialists from every construction
+							discipline, each dedicated to achieving unparalleled
+							quality and exceeding client expectations.
 						</p>
 						<p className="text-gray-700">
-							Whether you are building a new home, renovating,
-							extending or perhaps even in need of building
-							maintenance, we have you covered. We have all the
-							necessary licenses, qualifications & insurances to
-							undertake your project.
+							From groundbreaking new construction to thoughtful
+							renovations and expansions, our comprehensive service
+							portfolio addresses all your building needs. Rest assured,
+							our full industry accreditation, comprehensive insurance
+							coverage, and proven expertise make us your trusted
+							partner in construction.
 						</p>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -347,13 +349,14 @@ const AboutSection = () => {
 									Qualified Builder
 								</h3>
 								<p className="text-gray-700">
-									Our team consists of professional qualified
-									tradesmen focusing on delivering perfection
-									and 100% customer satisfaction. We have a
-									network of tradesmen combining over 50 years
-									of experience in the industry, ensuring the
-									highest quality workmanship for your
-									project.
+									At BMK Developments, we pride ourselves on
+									our exceptional team of licensed and skilled
+									craftsmen who strive for excellence in
+									every project. Drawing from decades of
+									collective expertise across the construction
+									industry, we deliver superior workmanship
+									that consistently exceeds client
+									expectations.
 								</p>
 							</div>
 						</div>
@@ -364,15 +367,16 @@ const AboutSection = () => {
 									Project Management
 								</h3>
 								<p className="text-gray-700">
-									We offer comprehensive project management
-									services to ensure your project is completed
-									on time and within budget. Our expertise
-									includes managing all aspects of
-									construction, from initial planning and
-									design through to final completion. We
-									coordinate with all trades, handle council
-									requirements, and maintain clear
-									communication throughout the entire process.
+									From start to finish, our dedicated project
+									managers oversee every detail of your
+									construction journey. We excel at
+									orchestrating complex builds - seamlessly
+									integrating design, scheduling, budgeting,
+									and compliance. Our team coordinates
+									tradespeople, navigates permits, and keeps
+									you informed with regular updates, ensuring
+									a smooth path to bringing your vision to
+									life.
 								</p>
 							</div>
 						</div>
@@ -461,53 +465,63 @@ const Values = () => {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.8 }}
-					className="max-w-4xl mx-auto text-center"
+					className="max-w-4xl mx-auto"
 				>
-					<motion.p
-						className="text-xl sm:text-2xl md:text-3xl font-bold leading-relaxed mb-12"
+					<motion.h2
+						className="text-2xl md:text-3xl font-bold text-center mb-12"
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
-						With over 10 years' experience in the building industry
-						delivering bespoke results, we pride ourselves with
-						ensuring our client is happy at all times.
-					</motion.p>
+						What Makes Us Stand Out?
+					</motion.h2>
 
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 0.8, delay: 0.4 }}
-						className="space-y-6"
+						className="space-y-8 md:space-y-10"
 					>
-						<p className="text-lg md:text-xl">
-							BMK Developments is founded on 3 main values:
-						</p>
-
-						<div className="flex sm:flex-row items-center justify-center gap-4 sm:gap-12 mt-6">
-							{["Quality", "Innovation", "Trust"].map(
-								(value, index) => (
-									<motion.div
-										key={value}
-										initial={{ opacity: 0, y: 20 }}
-										whileInView={{ opacity: 1, y: 0 }}
-										viewport={{ once: true }}
-										transition={{
-											duration: 0.5,
-											delay: 0.6 + index * 0.2,
-										}}
-										className="flex items-center gap-2"
-									>
-										<Check className="w-5 h-5 text-[#0d83ed]" />
-										<span className="text-lg font-semibold">
-											{value}
-										</span>
-									</motion.div>
-								)
-							)}
-						</div>
+						{[
+							{
+								title: "Experience That Counts",
+								description: "10+ years in construction, renovation & extensions."
+							},
+							{
+								title: "Quality & Precision",
+								description: "Only high-grade materials & top craftsmanship."
+							},
+							{
+								title: "Client-Focused Approach",
+								description: "We prioritize your vision, ensuring personalized solutions & seamless communication."
+							}
+						].map((item, index) => (
+							<motion.div
+								key={item.title}
+								initial={{ opacity: 0, x: -20 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true }}
+								transition={{
+									duration: 0.5,
+									delay: 0.6 + index * 0.2
+								}}
+								className="flex items-start gap-4 max-w-2xl mx-auto"
+							>
+								<div className="flex-shrink-0 mt-1">
+									<Check className="w-6 h-6 text-[#0d83ed]" />
+								</div>
+								<div>
+									<h3 className="text-xl md:text-2xl font-semibold mb-2">
+										{item.title}
+									</h3>
+									<p className="text-gray-700 text-lg">
+										{item.description}
+									</p>
+								</div>
+							</motion.div>
+						))}
 					</motion.div>
 				</motion.div>
 			</div>

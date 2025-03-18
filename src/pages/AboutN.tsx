@@ -22,10 +22,11 @@ const AboutN = () => {
 							ABOUT US
 						</h1>
 						<p className="text-lg md:text-xl w-full md:max-w-3xl">
-							Here at BMK Developments, you will find a team of
-							dedicated, passionate and professional individuals
-							that strive to provide you with a beautifully
-							finished home.
+							BMK Developments brings together an exceptional team
+							of skilled craftsmen and industry experts who share
+							one common goal - transforming your dream home into
+							a stunning reality through masterful execution and
+							unwavering commitment to excellence.
 						</p>
 					</div>
 				</div>
@@ -42,25 +43,30 @@ const AboutN = () => {
 						className="space-y-4"
 					>
 						<p className="text-gray-700">
-							We take education, legislation, and compliance
-							seriously and work hard to stay up to date with the
-							latest information and changes by working with
-							Councils, Private Certifiers, and Engineers. This
-							allows us to deliver correct information, assess
-							with accuracy, and provide honest upfront pricing.
+							Staying at the forefront of industry standards is
+							our priority. Through ongoing collaboration with
+							local Councils, certified Engineers, and Private
+							Certifiers, we maintain comprehensive knowledge of
+							current building codes and regulations. This
+							expertise enables us to provide precise assessments
+							and transparent, accurate pricing from the start.
 						</p>
 						<p className="text-gray-700">
-							Our construction crew is known for their attention
-							to detail and consideration for tenants, neighbors,
-							and owner-occupiers during the building process.
-							Special attention is given to site safety to keep
-							all occupants and tradesmen safe for the duration of
-							the project.
+							What sets our team apart is their exceptional
+							craftsmanship combined with a thoughtful approach to
+							construction. We understand the impact of building
+							works on surrounding residents and take great care
+							to minimize disruption while maintaining rigorous
+							safety protocols that protect everyone on and around
+							our sites.
 						</p>
 						<p className="text-gray-700">
-							When you engage with our company for your project,
-							you have the assurance that we are the building
-							company. Construction is not outsourced.
+							Unlike many others, we handle all construction
+							in-house with our own dedicated team. This means
+							when you choose BMK Developments, you're working
+							directly with the builders who will bring your
+							project to life - no third-party contractors or
+							outsourcing.
 						</p>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
@@ -127,43 +133,43 @@ const AboutN = () => {
 						className="space-y-4"
 					>
 						<h2 className="text-3xl font-bold text-gray-800">
-							Why Choose Us?
+							PARTNER WITH EXCELLENCE
 						</h2>
 
 						<div className="space-y-4 last:mt-3">
 							<div className="flex items-start gap-3">
 								<Check className="min-w-5 h-5 text-[#0d83ed] mt-1" />
 								<p className="text-gray-600">
-									Our extensive experience ensures we have
-									encountered and successfully handled a wide
-									range of projects.
+									With a proven track record spanning numerous
+									successful builds, we bring unmatched expertise
+									to every construction challenge.
 								</p>
 							</div>
 
 							<div className="flex items-start gap-3">
 								<Check className="min-w-5 h-5 text-[#0d83ed] mt-1" />
 								<p className="text-gray-600">
-									We offer complimentary quotations to help
-									you plan your project without any initial
-									cost.
+									Start your journey with a zero-cost consultation
+									and receive a comprehensive project estimate at
+									no obligation.
 								</p>
 							</div>
 
 							<div className="flex items-start gap-3">
 								<Check className="min-w-5 h-5 text-[#0d83ed] mt-1" />
 								<p className="text-gray-600">
-									Our detailed, itemized quotes ensure
-									transparency, so you know exactly what
-									you're paying for with no hidden fees.
+									Every quote comes with a complete breakdown of
+									costs and services - we believe in absolute
+									clarity and zero surprises.
 								</p>
 							</div>
 
 							<div className="flex items-start gap-3">
 								<Check className="min-w-5 h-5 text-[#0d83ed] mt-1" />
 								<p className="text-gray-600">
-									We possess all the necessary licenses,
-									qualifications, and insurance to legally and
-									safely undertake your project.
+									Rest assured knowing your project is backed by
+									our complete suite of industry certifications,
+									permits and comprehensive insurance coverage.
 								</p>
 							</div>
 

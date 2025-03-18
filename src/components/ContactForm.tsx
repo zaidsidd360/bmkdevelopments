@@ -115,7 +115,7 @@ const ContactForm = () => {
 						className="bg-gray-50 p-4 md:p-8 rounded-2xl shadow-lg"
 					>
 						<h2 className="text-2xl font-bold mb-6">
-							FREE ONLINE QUOTE
+							GET YOUR FREE QUOTE
 						</h2>
 						<form onSubmit={handleSubmit} className="space-y-6">
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
